@@ -1,9 +1,3 @@
-Coursera House
-==============
-
-Это шаблон курсового проекта от преподавателей курса.
-
-
 Установка
 ---------
 
@@ -45,14 +39,3 @@ Coursera House
 Она запускается как celery -A coursera_house.celery worker -l info -B
 
 Celery использует Redis как брокер, инструкция по установке Redis: https://redis.io/topics/quickstart
-
-
-Тестирование
-------------
-
-
-Для запуска тестов выполните команду
-
-.. code-block:: bash
-
-    $ py.test tests
