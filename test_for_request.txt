@@ -1,0 +1,44 @@
+https://smarthome.webpython.graders.eldf.ru/
+Auth.current - метод получения текущего пользователя
+curl -X GET https://smarthome.webpython.graders.eldf.ru/api/auth.current -H "Authorization: Bearer <token>"
+{"status":"ok","data":{"access_token":"...","email":"...","first_name":"...","last_name":"..."}}
+
+User.controller - метод получения состояния всех контроллеров
+curl -X GET https://smarthome.webpython.graders.eldf.ru/api/user.controller -H "Authorization: Bearer <token>
+{"status":"ok","data":[{"value":false,"name":"..."},{"value":"...","name":"..."},{"value":100500,"name":"..."}]}
+
+User.controller - метод сохранения состояния контроллеров(параметры отправляются в json)
+curl -X POST https://smarthome.webpython.graders.eldf.ru/api/user.controller -H "Authorization: Bearer <token>
+-d "{
+  "controllers": [
+    {
+      "name": "air_conditioner",
+      "value": true
+    },
+    {
+      "name": "bedroom_light",
+      "value": true
+    }
+  ]
+}"
+Доступные контроллеры:
+air_conditioner - Кондиционер. Доступные значения (true, false)
+bedroom_temperature - Температура в спальне. Доступные значения - целые числа
+bedroom_light - Лампа в спальне. Доступные значения (true, false)
+smoke_detector - Датчик задымления на потолке. Доступные значения (true, false)
+bedroom_presence - Светодиод присутствия в спальне. Доступные значения (true, false)
+bedroom_motion - Датчик движения в спальне. Доступные значения (true, false)
+curtains - Занавески. Доступные значения: 
+('open' - занавески открыты, 'slightly_open' - занавески приоткрыты, 'close' - занавески закрыты)
+boiler - Бойлер. Доступные значения (true, false)
+boiler_temperature - Температура в бойлер. Доступные значения - целые числа
+cold_water - Кран холодной воды. Доступные значения (true, false)
+hot_water - Кран горячей воды. Доступные значения (true, false)
+bathroom_light - Лампа в ванной. Доступные значения (true, false)
+bathroom_motion - Датчик движения в спальне. Доступные значения (true, false)
+bathroom_presence - Светодиод присутствия в спальне. Доступные значения (true, false)
+washing_machine - Стиральная машина. Доступные значения: 
+('on' - включена, 'off' - выключена, 'broken' - сломана)
+leak_detector - Датчик протечки. Доступные значения (true, false). Доступен только на чтение.
+outdoor_light - Датчик освещенности за окном. Доступные значения (0 - 100). Доступен только на чтение.
+{"status":"ok","data":[{"value":false,"name":"..."},{"value":"...","name":"..."},{"value":100500,"name":"..."}]}
